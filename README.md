@@ -2,7 +2,7 @@
 A library that simplifies usage and configuration of Polly policies.
 
 # Getting Started
-1	Create PollyConfig section in your config file
+1.	Create PollyConfig section in your config file
 2.	In Startup.cs call `services.AddSingleton(PollyFactory.LoadRegistryFromConfig(Configuration, "PollyConfig"));`
 3.	Import PolicyRegistry instance in your service
 4.  Get your Policy by name: `_retrier = registry.Get<RetryPolicy>("MyRetrier");`
