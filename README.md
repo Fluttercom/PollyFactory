@@ -7,7 +7,10 @@ A library that simplifies usage and configuration of Polly policies.
 3.	Import PolicyRegistry instance in your service
 4.  Get your Policy by name: `_retrier = registry.Get<RetryPolicy>("MyRetrier");`
 ---
-If you need a RetryPolicy with OnRetry handler, call `PollyFaсtory.CreateRetrierWithHandler(configSection, onRetry)`
+If you need a RetryPolicy with OnRetry handler, call `PollyFabric.CreateRetrierWithHandler(configSection, onRetry)`
+- Retriers are thread-safe, so it's ok to use the same instance across app.
+- Circuit breakers have own state, so use separate CB in each thread.
+- To create a new instance of a Policy from config, use `PollyFabric.CreatePolicy(config, configSection, PolicyKey)`
 
 # Config section reference
 ```

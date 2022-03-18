@@ -28,6 +28,18 @@ namespace PollyFactory
             return registry;
         }
 
+        public static IsPolicy CreatePolicy(IConfiguration config, string configSection, string key)
+        {
+            var pollyConfig = new PollyConfigSection();
+            config.GetSection(configSection).Bind(pollyConfig);
+            if (pollyConfig.TryGetValue(key, out var entry))
+            {
+                return CreatePolicy(entry);
+            }
+            else
+                throw new Exception($"Cannot find section with key {key}");
+        }
+
         public static IsPolicy CreatePolicy(PollyConfigEntry entry)
         {
             PolicyBuilder pbuilder = Policy.Handle<Exception>();
