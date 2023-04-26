@@ -1,11 +1,14 @@
 # Introduction 
 A library that simplifies usage and configuration of Polly policies.
 
+[![Nuget](https://img.shields.io/nuget/v/FlutterEffect.PollyFactory)](https://www.nuget.org/packages/FlutterEffect.PollyFactory/)
+
 # Getting Started
-1.	Create PollyConfig section in your config file
-2.	In Startup.cs call `services.AddSingleton(PollyFactory.LoadRegistryFromConfig(Configuration, "PollyConfig"));`
-3.	Import PolicyRegistry instance in your service
-4.  Get your Policy by name: `_retrier = registry.Get<RetryPolicy>("MyRetrier");`
+1.  Install FlutterEffect.PollyFactory nuget package
+2.	Create PollyConfig section in your config file
+3.	In Startup.cs call `services.AddSingleton(PollyFactory.LoadRegistryFromConfig(Configuration, "PollyConfig"));`
+4.	Import PolicyRegistry instance in your service
+5.  Get your Policy by name: `_retrier = registry.Get<RetryPolicy>("MyRetrier");`
 ---
 If you need a RetryPolicy with OnRetry handler, call `PollyFabric.CreateRetrierWithHandler(configSection, onRetry)`
 - Retriers are thread-safe, so it's ok to use the same instance across app.
