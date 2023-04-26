@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PollyFactory.ConfigSections
+namespace FlutterEffect.PollyFactory.ConfigSections
 {
     public class PollyConfigSection : Dictionary<string, PollyConfigEntry>
     {

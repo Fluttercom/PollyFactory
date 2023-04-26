@@ -1,13 +1,12 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using FlutterEffect.PollyFactory.ConfigSections;
+using Microsoft.Extensions.Configuration;
 using Polly;
 using Polly.Registry;
-using Polly.Retry;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using PollyFactory.ConfigSections;
 
-namespace PollyFactory
+namespace FlutterEffect.PollyFactory
 {
     public class PollyFactory
     {

@@ -5,7 +5,8 @@ using Polly.Retry;
 using Polly.Wrap;
 using System;
 
-namespace PollyFactory.Tests
+
+namespace FlutterEffect.PollyFactory.Tests
 {
     [TestClass]
     public class UnitTest1
