@@ -25,6 +25,6 @@ If you need a RetryPolicy with OnRetry handler, call `PollyFabric.CreateRetrierW
 ```
 
 # Available policies
-* (Async)Retrier - retries forever with the "Waits delays.
-* Simple(Async)Retrier - retries "Retries" times with "Waits" delays.
+* (Async)Retrier - retries forever with the "Waits" delays.
+* Simple(Async)Retrier - retries "Retries" times with the "Waits" delays.
 * (Async)CircuitBreaker - after "Retries" times fails for "Waits[0]" seconds.
